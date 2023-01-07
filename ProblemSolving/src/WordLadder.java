@@ -3,9 +3,11 @@ import java.util.*;
 /**
  * 4. Word Ladder
  * Level: Medium
- * Given two words (start and end) (both of same length), and a dictionary, find the length of shortest transformation sequence from start to end,
- * such that only one letter can be changed at a time, or 0 if no such sequence exists.
- * and each intermediate word must exist in the dictionary.
+ * Given two words (start and end) (both of same length), and a dictionary, find the length of the shortest transformation sequence from start to end,
+ * such that
+ *
+ * 1) Only one letter can be changed at a time, or 0 if no such sequence exists.
+ * 2) Each intermediate word must exist in the dictionary.
  *
  * Note that start does not need to be in dictionary.
  *
@@ -13,20 +15,28 @@ import java.util.*;
  * start = "hit"
  * end = "cog"
  * dict = ["hot","dot","dog","lot","log"]
- * One shortest transformation is "hit" ->"hot" ->"dot" ->"dog" ->"cog", the program should return its length 5
- * Or another shortest transformation is "hit" ->"dot" ->"lot" ->"log" ->"cog", the program should return its length 5
+ *
+ * All possible transformation are:
+ * "hit" ->"hot" ->"dot" ->"lot" ->"dog" ->"log" ->"cog", the program should return its length 7
+ * "hit" ->"hot" ->"dot" ->"dog" ->"lot" ->"cog", the program should return its length 6
+ * "hit" ->"hot" ->"dot" ->"dog" ->"cog", the program should return its length 5
+ * "hit" ->"dot" ->"lot" ->"log" ->"cog", the program should return its length 5
+ *
+ * So the length of the shortest transformation sequence from start to end are
+ * "hit" ->"hot" ->"dot" ->"dog" ->"cog"
+ * "hit" ->"dot" ->"lot" ->"log" ->"cog"
  * */
-class WordNode {
-    String words;
-    int numSteps;
-
-    WordNode(String words, int numSteps) {
-        this.words = words;
-        this.numSteps = numSteps;
-    }
-}
-
 public class WordLadder {
+
+    static class WordNode {
+        String words;
+        int numSteps;
+
+        WordNode(String words, int numSteps) {
+            this.words = words;
+            this.numSteps = numSteps;
+        }
+    }
 
     /**
      * Solution 1A - Breath First Search
