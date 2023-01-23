@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * 1 Rotate Array in Java
+ * Level: Easy
  * You may have been using Java for a while. Do you think a simple Java array question
  * can be a challenge? Let’s use the following problem to test.
  * Problem: Rotate an array of n elements to the right by k steps. For example, with n = 7
